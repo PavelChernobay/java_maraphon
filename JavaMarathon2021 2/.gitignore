@@ -2,4 +2,4 @@
 *.iml
 /target
 /src/test
- .DS_Store
+*.DS_Store
