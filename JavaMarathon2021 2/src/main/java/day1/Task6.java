@@ -5,8 +5,7 @@ public class Task6 {
         int k = 6;
 
         for (int i = 1; i <= 9; i++) {
-            int x = i * k;
-            System.out.println(i + " x " + k + " = " + x);
+            System.out.println(i + " x " + k + " = " + i * k);
         }
     }
 }
