@@ -1,11 +1,11 @@
 package day7;
 
 public class Airplane {
-    String manufacturer;
-    int year;
-    int length;
-    int weight;
-    int fuel = 0;
+    private String manufacturer;
+    private int year;
+    private int length;
+    private int weight;
+    private int fuel = 0;
 
     public Airplane(String manufacturer, int year, int length, int weight) {
         this.manufacturer = manufacturer;

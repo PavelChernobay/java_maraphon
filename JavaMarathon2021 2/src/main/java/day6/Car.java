@@ -10,14 +10,7 @@ public class Car {
     }
 
     public int yearDifference(int year) {
-        int difference;
-
-        if (this.year >= year) {
-            difference = this.year - year;
-        } else {
-            difference = year - this.year;
-        }
-        return difference;
+        return Math.abs(this.year - year);
     }
 
     public String getModel() {
