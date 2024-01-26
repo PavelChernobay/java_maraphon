@@ -1,6 +1,5 @@
 package day12.task5;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MusicBand {

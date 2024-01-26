@@ -10,7 +10,7 @@ public class Task1 {
         System.out.println(lists);
 
         int value = lists.size() / 2;
-        lists.set(value, "Mercedes");
+        lists.add(value, "Mercedes");
 
         lists.remove(0);
 
