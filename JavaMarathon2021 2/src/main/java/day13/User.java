@@ -29,11 +29,8 @@ public class User {
     }
 
     public boolean isFriend(User user) {
-        if (isSubscribed(user) &&
-            user.isSubscribed(User.this)) {
-            return true;
-        }
-        return false;
+        return isSubscribed(user) &&
+                user.isSubscribed(User.this);
     }
 
     public void sendMessage(User user, String text) {

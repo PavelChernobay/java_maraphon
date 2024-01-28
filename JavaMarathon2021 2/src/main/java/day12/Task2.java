@@ -8,7 +8,7 @@ public class Task2 {
         List<Integer> lists = new ArrayList<>();
 
         addList(0, 30, lists);
-        addList(300, 500, lists);
+        addList(300, 350, lists);
 
         System.out.println(lists);
     }

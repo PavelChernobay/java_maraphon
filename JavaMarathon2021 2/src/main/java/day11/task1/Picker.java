@@ -3,13 +3,13 @@ package day11.task1;
 public class Picker implements Worker {
     private int salary;
     private boolean isPayed;
-    Warehouse warehouse;
-    private int amountPicker;
+    private Warehouse warehouse;
+    private static final int BONUS = 70000;
+    private static final int SALARY_COURIER = 80;
+    private static final int COUNT_DELIVERY_BONUS = 10000;
 
     public Picker(Warehouse warehouse) {
         this.warehouse = warehouse;
-        isPayed = false;
-        amountPicker++;
     }
 
     public int getSalary() {
@@ -22,8 +22,8 @@ public class Picker implements Worker {
 
     @Override
     public void doWork() {
-        salary += 80;
-        warehouse.countPickedOrders++;
+        salary += SALARY_COURIER;
+        warehouse.incrementCountPickedOrders();
     }
 
     @Override
@@ -33,17 +33,9 @@ public class Picker implements Worker {
             return;
         }
 
-        if (amountPicker > 1) {
-            if (warehouse.countPickedOrders >= (10000 / amountPicker)) {
-                isPayed = true;
-                salary += 50000;
-                return;
-            }
-        }
-
-        if (warehouse.countPickedOrders >= 10000) {
+        if (warehouse.getCountPickedOrders() >= COUNT_DELIVERY_BONUS) {
             isPayed = true;
-            salary += 70000;
+            salary += BONUS;
         } else {
             System.out.println("Бонус пока не доступен");
         }

@@ -1,14 +1,16 @@
 package day11.task2;
 
 public class Paladin extends Hero implements PhysAttack, Healer {
+    private int healHimself;
+    private int healTeammate;
+
     public Paladin() {
         super();
-        setHealth(MAX_HEALTH);
         setPhysAtt(15);
         setPhysDef(50);
         setMagicDef(20);
-        setHealHimself(25);
-        setHealTeammate(10);
+        healHimself = 25;
+        healTeammate = 10;
     }
 
     @Override
@@ -17,7 +19,7 @@ public class Paladin extends Hero implements PhysAttack, Healer {
             return;
         }
 
-        setHealth(getHealth() + getHealHimself());
+        setHealth(getHealth() + healHimself);
 
         if (getHealth() > MAX_HEALTH) {
             setHealth(MAX_HEALTH);
@@ -30,23 +32,10 @@ public class Paladin extends Hero implements PhysAttack, Healer {
             return;
         }
 
-        hero.setHealth(hero.getHealth() + getHealTeammate());
+        hero.setHealth(hero.getHealth() + healTeammate);
 
         if (hero.getHealth() > MAX_HEALTH) {
             hero.setHealth(MAX_HEALTH);
-        }
-    }
-
-    @Override
-    public void physicalAttack(Hero hero) {
-        if (hero.getHealth() == MIN_HEALTH) {
-            return;
-        }
-
-        hero.setHealth(hero.getHealth() - (getPhysAtt() - (getPhysAtt() * hero.getPhysDef() / MAX_HEALTH)));
-
-        if (hero.getHealth() < MIN_HEALTH) {
-            hero.setHealth(MIN_HEALTH);
         }
     }
 
