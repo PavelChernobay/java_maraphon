@@ -9,7 +9,6 @@ public class Task1 {
     public static void main(String[] args) {
         File file = new File("src/main/resources/shoes.csv");
         File file2 = new File("src/main/resources/missing_shoes.txt");
-        file2.getParentFile().mkdirs();
 
         try {
             Scanner scanner = new Scanner(file);
