@@ -21,20 +21,22 @@ public class Task3 {
                 String line = scanner.nextLine();
 
                 String[] array = line.split(" ");
-                lists.add(new People(array[0], Integer.parseInt(array[1])));
 
                 if (Integer.parseInt(array[1]) < 0) {
-                    lists.clear();
                     throw new Exception();
                 }
+
+                lists.add(new People(array[0], Integer.parseInt(array[1])));
             }
 
+            return lists;
 
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
         } catch (Exception e) {
             System.out.println("Некорректный входной файл");
         }
-        return lists;
+
+        return null;
     }
 }
