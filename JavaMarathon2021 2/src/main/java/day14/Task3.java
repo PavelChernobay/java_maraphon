@@ -14,8 +14,7 @@ public class Task3 {
     public static List<People> parseFileToObjList(File file) {
         List<People> lists = new ArrayList<>();
 
-        try {
-            Scanner scanner = new Scanner(file);
+        try(Scanner scanner = new Scanner(file)) {
 
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();

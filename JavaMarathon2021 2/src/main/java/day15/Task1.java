@@ -19,7 +19,7 @@ public class Task1 {
                String[] arrays = line.split(";");
 
                if (arrays.length != 3) {
-                   throw new  Exception();
+                   throw new  Exception("Некорректный файл");
                }
 
                if (Integer.parseInt(arrays[2]) == 0) {
@@ -28,11 +28,12 @@ public class Task1 {
             }
 
             pw.close();
+            scanner.close();
 
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            System.out.println("Файл не найден");
         } catch (Exception e) {
-            System.out.println("Некорректный файл");
+            System.out.println(e.getMessage());
         }
     }
 }

@@ -44,17 +44,16 @@ public class Task2 {
             }
 
             pwFile2.close();
+            scanner.close();
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            System.out.println("Файл не найден");
         }
 
-        File file = new File("src/test/resources/D16T2_1.txt");
         printResult(file2);
     }
 
     public static void printResult(File file) {
-        try {
-            Scanner scanner = new Scanner(file);
+        try (Scanner scanner = new Scanner(file)) {
 
             double sum = 0;
 
@@ -71,7 +70,7 @@ public class Task2 {
             System.out.println(sumInt);
 
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            System.out.println("Файл не найден");
         }
     }
 }

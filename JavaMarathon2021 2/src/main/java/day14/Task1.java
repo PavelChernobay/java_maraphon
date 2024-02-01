@@ -16,8 +16,7 @@ public class Task1 {
     public static void printSumDigits(File file) {
         List<Integer> numbers = new ArrayList<>();
 
-        try {
-            Scanner scanner = new Scanner(file);
+        try (Scanner scanner = new Scanner(file)) {
 
             while (scanner.hasNextInt()) {
                 numbers.add(scanner.nextInt());

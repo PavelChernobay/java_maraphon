@@ -16,8 +16,7 @@ public class Task2 {
     public static List<String> parseFileToStringList(File file) {
         List<String> lists = new ArrayList<>();
 
-        try {
-            Scanner scanner = new Scanner(file);
+        try (Scanner scanner = new Scanner(file)) {
 
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
@@ -32,7 +31,6 @@ public class Task2 {
             }
 
             return lists;
-
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
         } catch (Exception e) {

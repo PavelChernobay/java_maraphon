@@ -32,8 +32,10 @@ public class Task1 {
             average = (double) sum / numbers.size();
 
             System.out.printf(average + " --> %.3f", average);
+
+            scanner.close();
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            System.out.println("Файл не найден");
         }
     }
 }
