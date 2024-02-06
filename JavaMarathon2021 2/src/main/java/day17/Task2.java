@@ -35,6 +35,7 @@ public class Task2 {
         board[7][6] = ChessPiece.KING_WHITE;
 
         ChessBoard chessBoard = new ChessBoard(board);
+        chessBoard.fillingEmptyCells();
         chessBoard.print();
     }
 }

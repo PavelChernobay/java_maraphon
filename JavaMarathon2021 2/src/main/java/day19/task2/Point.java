@@ -1,8 +1,5 @@
 package day19.task2;
 
-/**
- * @author Neil Alishev
- */
 class Point {
     private final int x;
     private final int y;
@@ -36,5 +33,11 @@ class Point {
         int result = x;
         result = 31 * result + y;
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "{x=" + x +
+                ", y=" + y + "}";
     }
 }
